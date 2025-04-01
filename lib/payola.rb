@@ -49,7 +49,7 @@ module Payola
     def subscribe(name, &block)
       pro = Proc.new(&block) # Capture the block
       pro.call
-      StripeEvent.subscribe(name, callable)
+      StripeEvent.subscribe(name, block)
     end
 
     def instrument(name, object)
